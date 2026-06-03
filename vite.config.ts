@@ -13,28 +13,18 @@ export default defineConfig({
     viteCompression({ algorithm: 'brotliCompress', ext: '.br', threshold: 1024 }),
   ],
   build: {
-    // Code obfuscation — minify with esbuild (default), removes names/comments
     minify: 'esbuild',
-    // Further obfuscation: mangle all internal identifiers
     target: 'es2015',
     rollupOptions: {
       output: {
-        // Split vendor chunks so app code changes don't bust CDN cache for libs
-        manualChunks: {
-          react:  ['react', 'react-dom'],
-          motion: ['framer-motion'],
-          router: ['react-router-dom'],
-        },
-        // Obfuscate chunk filenames with content hash
-        chunkFileNames:  'assets/[hash].js',
-        entryFileNames:  'assets/[hash].js',
-        assetFileNames:  'assets/[hash][extname]',
+        chunkFileNames: 'assets/[hash].js',
+        entryFileNames: 'assets/[hash].js',
+        assetFileNames: 'assets/[hash][extname]',
       },
     },
-    // Remove console.log/debug in production
-    esbuildOptions: {
-      drop: ['debugger'],
-      pure: ['console.debug', 'console.info'],   // keep warn/error, drop debug/info
-    },
+  },
+  esbuild: {
+    drop: ['debugger'],
+    pure: ['console.debug', 'console.info'],
   },
 })

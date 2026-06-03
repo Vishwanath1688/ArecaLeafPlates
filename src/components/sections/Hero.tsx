@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion, useScroll, useTransform, type Variants } from 'framer-motion'
 import { useRef } from 'react'
 import { WhatsAppButton } from '../ui/WhatsAppButton'
 import { WA } from '../../data/whatsappMessages'
@@ -11,12 +11,12 @@ export function Hero() {
   const bgY = useTransform(scrollYProgress, [0, 1], ['0%', '40%'])
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0])
 
-  const stagger = {
+  const stagger: Variants = {
     animate: { transition: { staggerChildren: 0.15 } }
   }
-  const wordVariant = {
+  const wordVariant: Variants = {
     initial: { opacity: 0, y: 60 },
-    animate: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } },
+    animate: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
   }
 
   return (
