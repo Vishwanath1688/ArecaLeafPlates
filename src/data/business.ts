@@ -1,0 +1,22 @@
+export const BUSINESS = {
+  name: 'Sri Kalleshwara Enterprises',
+  shortName: 'SKE',
+  tagline: "From Nature's Palm to Your Table",
+  whatsapp: '+918095032355',
+  whatsappUrl: 'https://wa.me/918095032355',
+  instagram: 'https://www.instagram.com/ske_arecaleafplates/',
+  facebook: 'https://www.facebook.com/skeArecaLeafPlates',
+  address: {
+    village: 'Somalapura Village',
+    hobli: 'Nittur Hobli',
+    taluk: 'Gubbi Taluk',
+    district: 'Tumakuru District',
+    state: 'Karnataka',
+    pin: '572222',
+    country: 'India',
+    full: 'Somalapura Village, Nittur Hobli, Gubbi Taluk, Tumakuru District, Karnataka — 572222',
+  },
+  capacity: '10 lakh plates/month',
+  gst: 'GST Registered',
+  mapsEmbed: 'https://maps.google.com/maps?q=Gubbi,+Tumakuru+District,+Karnataka&output=embed',
+}

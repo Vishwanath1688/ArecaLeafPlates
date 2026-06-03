@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+  --color-forest: #1A3D2B;
+  --color-leaf: #2D6A2D;
+  --color-sage: #7FB069;
+  --color-cream: #F5F0E8;
+  --color-purewhite: #FAFAF7;
+  --color-areca: #6B3A1F;
+  --color-charcoal: #1C1C1C;
+  --color-stone: #555555;
+
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+
+  --animate-marquee: marquee 30s linear infinite;
+  --animate-pulse-glow: pulseGlow 2s ease-in-out infinite;
+  --animate-float: float 6s ease-in-out infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(45, 106, 45, 0.4); }
+  50% { box-shadow: 0 0 0 12px rgba(45, 106, 45, 0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+
+/* Smooth scrolling */
+html { scroll-behavior: smooth; }
+
+/* Font rendering */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-cream);
+  color: var(--color-charcoal);
+  font-family: var(--font-sans);
+}
+
+/* Focus styles */
+*:focus-visible {
+  outline: 2px solid var(--color-leaf);
+  outline-offset: 2px;
+}
