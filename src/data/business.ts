@@ -2,8 +2,8 @@ export const BUSINESS = {
   name: 'Sri Kalleshwara Enterprises',
   shortName: 'SKE',
   tagline: "From Nature's Palm to Your Table",
-  whatsapp: '+918095032355',
-  whatsappUrl: 'https://wa.me/918095032355',
+  whatsapp: '+918861938644',
+  whatsappUrl: 'https://wa.me/918861938644',
   instagram: 'https://www.instagram.com/ske_arecaleafplates/',
   facebook: 'https://www.facebook.com/skeArecaLeafPlates',
   address: {

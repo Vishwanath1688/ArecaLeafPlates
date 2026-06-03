@@ -1,4 +1,4 @@
-const BASE = 'https://wa.me/918095032355?text='
+const BASE = 'https://wa.me/918861938644?text='
 const encode = (msg: string) => BASE + encodeURIComponent(msg)
 
 export const WA = {

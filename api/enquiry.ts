@@ -104,7 +104,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
                 <tr><td style="padding:8px 0;color:#666">Received</td><td style="padding:8px 0">${new Date(createdAt).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })} IST</td></tr>
               </table>
               <div style="margin-top:20px;padding-top:16px;border-top:1px solid #e0e0e0">
-                <a href="https://wa.me/${email.replace(/[^0-9]/g, '')}"
+                <a href="https://wa.me/918861938644"
                    style="background:#25D366;color:#fff;padding:10px 20px;border-radius:6px;text-decoration:none;font-weight:bold">
                   Reply on WhatsApp
                 </a>
