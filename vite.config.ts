@@ -13,8 +13,7 @@ export default defineConfig({
     viteCompression({ algorithm: 'brotliCompress', ext: '.br', threshold: 1024 }),
   ],
   build: {
-    minify: 'esbuild',
-    target: 'es2015',
+    minify: true,
     rollupOptions: {
       output: {
         chunkFileNames: 'assets/[hash].js',
