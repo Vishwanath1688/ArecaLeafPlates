@@ -2,8 +2,6 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { WhatsAppButton } from '../ui/WhatsAppButton'
-
-import { BUSINESS } from '../../data/business'
 import { WA } from '../../data/whatsappMessages'
 
 const NAV_LINKS = [
@@ -57,8 +55,6 @@ export function Navbar() {
                 onClick={() => scrollTo(link.href)}
                 className="font-sans text-sm font-medium transition-colors hover:text-[#2D6A2D]"
                 style={{ color: scrolled ? '#1C1C1C' : 'rgba(255,255,255,0.9)' }}
-                onMouseEnter={() => setVariant('hover')}
-                onMouseLeave={() => setVariant('default')}
               >
                 {link.label}
               </button>
