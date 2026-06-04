@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowLeft } from 'lucide-react'
+import { Icon } from '../components/ui/Icon'
 import { getPostBySlug } from '../data/blogPosts'
 import { Navbar } from '../components/layout/Navbar'
 import { Footer } from '../components/layout/Footer'
@@ -65,7 +65,7 @@ export function BlogPost() {
               onClick={() => navigate('/blog')}
               className="flex items-center gap-2 text-sm text-stone hover:text-[#2D6A2D] transition-colors mb-8 font-sans"
             >
-              <ArrowLeft size={16} /> All Posts
+              <Icon name="arrow_back" size={16} /> All Posts
             </button>
 
             {/* Meta */}

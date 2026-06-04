@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
-import { ArrowLeft } from 'lucide-react'
+import { Icon } from '../components/ui/Icon'
 import { BLOG_POSTS } from '../data/blogPosts'
 import { Navbar } from '../components/layout/Navbar'
 import { Footer } from '../components/layout/Footer'
@@ -22,7 +22,7 @@ export function BlogIndex() {
               onClick={() => navigate('/')}
               className="flex items-center gap-2 text-sm text-stone hover:text-[#2D6A2D] transition-colors mb-10 font-sans"
             >
-              <ArrowLeft size={16} /> Back to Home
+              <Icon name="arrow_back" size={16} /> Back to Home
             </button>
 
             <p className="font-sans text-xs tracking-[0.3em] uppercase text-[#2D6A2D] mb-3">Blog</p>

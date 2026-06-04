@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X } from 'lucide-react'
 import { WhatsAppButton } from '../ui/WhatsAppButton'
+import { Icon } from '../ui/Icon'
 import { WA } from '../../data/whatsappMessages'
 
 const NAV_LINKS = [
@@ -14,8 +14,8 @@ const NAV_LINKS = [
 ]
 
 export function Navbar() {
-  const [scrolled,  setScrolled]  = useState(false)
-  const [menuOpen,  setMenuOpen]  = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 80)
@@ -39,12 +39,22 @@ export function Navbar() {
           {/* Logo */}
           <motion.button
             onClick={() => scrollTo('#hero')}
-            className="font-display text-base sm:text-lg md:text-xl font-bold leading-tight text-left"
-            style={{ color: scrolled ? '#1A3D2B' : '#fff' }}
+            className="flex items-center gap-2 sm:gap-3"
             whileHover={{ scale: 1.01 }}
           >
-            Sri Kalleshwara<span className="hidden sm:inline"><br /></span>
-            <span className="text-[#7FB069]"> Enterprises</span>
+            <img
+              src="/logo.png"
+              alt="Sri Kalleshwara Enterprises"
+              className="h-8 sm:h-10 md:h-12 w-auto object-contain"
+              style={{ filter: scrolled ? 'none' : 'brightness(0) invert(1)' }}
+            />
+            <span
+              className="font-display text-sm sm:text-base md:text-lg font-semibold leading-tight hidden sm:block"
+              style={{ color: scrolled ? '#1A3D2B' : '#fff' }}
+            >
+              Sri Kalleshwara<br />
+              <span className="text-[#7FB069]">Enterprises</span>
+            </span>
           </motion.button>
 
           {/* Desktop links */}
@@ -62,19 +72,19 @@ export function Navbar() {
             <WhatsAppButton url={WA.hero} label="Enquire Now" size="sm" />
           </div>
 
-          {/* Mobile/tablet hamburger */}
+          {/* Mobile hamburger */}
           <button
             className="lg:hidden p-2"
             onClick={() => setMenuOpen(v => !v)}
             style={{ color: scrolled ? '#1A3D2B' : '#fff' }}
             aria-label="Toggle menu"
           >
-            {menuOpen ? <X size={22} /> : <Menu size={22} />}
+            <Icon name={menuOpen ? 'close' : 'menu'} size={24} />
           </button>
         </div>
       </motion.nav>
 
-      {/* Mobile / tablet drawer */}
+      {/* Mobile drawer */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
@@ -84,11 +94,12 @@ export function Navbar() {
             exit={{ x: '100%' }}
             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
           >
+            <img src="/logo.png" alt="SKE" className="h-16 w-auto object-contain mb-4 brightness-0 invert" />
             {NAV_LINKS.map((link, i) => (
               <motion.button
                 key={link.href}
                 onClick={() => scrollTo(link.href)}
-                className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white hover:text-[#7FB069] transition-colors"
+                className="font-display text-3xl sm:text-4xl font-semibold text-white hover:text-[#7FB069] transition-colors tracking-wide"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.06 }}

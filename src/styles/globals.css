@@ -1,43 +1,103 @@
 @import "tailwindcss";
 
-@theme {
-  --color-forest: #1A3D2B;
-  --color-leaf: #2D6A2D;
-  --color-sage: #7FB069;
-  --color-cream: #F5F0E8;
-  --color-purewhite: #FAFAF7;
-  --color-areca: #6B3A1F;
-  --color-charcoal: #1C1C1C;
-  --color-stone: #555555;
+/* ─── Custom Fonts ─────────────────────────────────────────────────────────── */
 
-  --font-display: "Playfair Display", Georgia, serif;
-  --font-sans: "Inter", system-ui, sans-serif;
-
-  --animate-marquee: marquee 30s linear infinite;
-  --animate-pulse-glow: pulseGlow 2s ease-in-out infinite;
-  --animate-float: float 6s ease-in-out infinite;
+/* Clash Display — headings, all-caps titles */
+@font-face {
+  font-family: 'ClashDisplay';
+  src: url('/fonts/ClashDisplay-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ClashDisplay';
+  src: url('/fonts/ClashDisplay-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ClashDisplay';
+  src: url('/fonts/ClashDisplay-Semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ClashDisplay';
+  src: url('/fonts/ClashDisplay-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
 
+/* GT Eesti Text — body, buttons, UI */
+@font-face {
+  font-family: 'GTEesti';
+  src: url('/fonts/GT-Eesti-Text-Regular-Trial.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'GTEesti';
+  src: url('/fonts/GT-Eesti-Text-Book-Trial.otf') format('opentype');
+  font-weight: 450;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'GTEesti';
+  src: url('/fonts/GT-Eesti-Text-Medium-Trial.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'GTEesti';
+  src: url('/fonts/GT-Eesti-Text-Bold-Trial.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─── Theme ─────────────────────────────────────────────────────────────────── */
+@theme {
+  --color-forest:    #1A3D2B;
+  --color-leaf:      #2D6A2D;
+  --color-sage:      #7FB069;
+  --color-cream:     #F5F0E8;
+  --color-purewhite: #FAFAF7;
+  --color-areca:     #6B3A1F;
+  --color-charcoal:  #1C1C1C;
+  --color-stone:     #555555;
+
+  --font-display: 'ClashDisplay', 'Georgia', serif;
+  --font-sans:    'GTEesti', 'system-ui', sans-serif;
+
+  --animate-marquee:    marquee 30s linear infinite;
+  --animate-pulse-glow: pulseGlow 2s ease-in-out infinite;
+  --animate-float:      float 6s ease-in-out infinite;
+}
+
+/* ─── Keyframes ─────────────────────────────────────────────────────────────── */
 @keyframes marquee {
-  0% { transform: translateX(0); }
+  0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
-
 @keyframes pulseGlow {
   0%, 100% { box-shadow: 0 0 0 0 rgba(45, 106, 45, 0.4); }
-  50% { box-shadow: 0 0 0 12px rgba(45, 106, 45, 0); }
+  50%       { box-shadow: 0 0 0 12px rgba(45, 106, 45, 0); }
 }
-
 @keyframes float {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  50%       { transform: translateY(-10px); }
 }
 
-
-/* Smooth scrolling */
+/* ─── Base ───────────────────────────────────────────────────────────────────── */
 html { scroll-behavior: smooth; }
 
-/* Font rendering */
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -46,8 +106,14 @@ body {
   font-family: var(--font-sans);
 }
 
-/* Focus styles */
 *:focus-visible {
   outline: 2px solid var(--color-leaf);
   outline-offset: 2px;
+}
+
+/* Material Icons */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+  line-height: 1;
 }
