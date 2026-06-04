@@ -16,7 +16,9 @@ export const BUSINESS = {
     country: 'India',
     full: 'Somalapura Village, Nittur Hobli, Gubbi Taluk, Tumakuru District, Karnataka — 572222',
   },
+  email: 'enterprises.kalleshwara@gmail.com',
   capacity: '10 lakh plates/month',
   gst: 'GST Registered',
-  mapsEmbed: 'https://maps.google.com/maps?q=Gubbi,+Tumakuru+District,+Karnataka&output=embed',
+  mapsUrl: 'https://maps.app.goo.gl/4dhzH3MJUXxTcNNPA',
+  mapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3879.5!2d76.9417!3d13.3089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb027e8a8a8a8a8%3A0x0!2sSomalapura+Village%2C+Gubbi+Taluk%2C+Tumakuru+District%2C+Karnataka!5e0!3m2!1sen!2sin!4v1',
 }

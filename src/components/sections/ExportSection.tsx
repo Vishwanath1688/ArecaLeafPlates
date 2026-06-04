@@ -49,23 +49,23 @@ export function ExportSection() {
     <>
     <Toast message={toast} type="error" onDismiss={dismissToast} />
     <section id="export" className="py-20 md:py-32 bg-[#1A3D2B] text-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
           {/* Left */}
           <div>
             <ScrollReveal>
-              <span className="inline-block bg-[#7FB069]/20 text-[#7FB069] font-sans text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">
+              <span className="inline-block bg-[#7FB069]/20 text-[#7FB069] font-sans text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-5 sm:mb-6">
                 Export Enquiries Welcome
               </span>
-              <h2 className="font-display text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight mb-4 sm:mb-6">
                 We Supply to the World
               </h2>
-              <p className="text-white/70 text-lg leading-relaxed mb-8">
+              <p className="text-white/70 text-sm sm:text-base lg:text-lg leading-relaxed mb-6 sm:mb-8">
                 We supply to buyers across India and internationally.
                 You arrange freight from our factory in Karnataka — we ensure quality and timely packing.
                 Direct from manufacturer, no middlemen.
               </p>
-              <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur rounded-xl px-5 py-3 text-sm text-white/80 mb-10">
+              <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur rounded-xl px-4 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-sm text-white/80 mb-8 sm:mb-10">
                 <span className="w-2 h-2 bg-[#7FB069] rounded-full shrink-0"></span>
                 Ex-Factory Supply · Buyer Arranges Freight · Direct from Manufacturer
               </div>
@@ -123,7 +123,7 @@ export function ExportSection() {
                   <form onSubmit={handleSubmit} className="space-y-4">
                     {[
                       { name: 'name', placeholder: 'Your Name / Company', type: 'text' },
-                      { name: 'email', placeholder: 'Email or WhatsApp number', type: 'text' },
+                      { name: 'email', placeholder: 'Email or WhatsApp number (e.g. enterprises.kalleshwara@gmail.com)', type: 'text' },
                     ].map(f => (
                       <input
                         key={f.name}

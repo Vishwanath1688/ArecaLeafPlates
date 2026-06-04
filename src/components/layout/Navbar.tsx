@@ -14,8 +14,9 @@ const NAV_LINKS = [
 ]
 
 export function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [scrolled,  setScrolled]  = useState(false)
+  const [menuOpen,  setMenuOpen]  = useState(false)
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 80)
     window.addEventListener('scroll', onScroll, { passive: true })
@@ -24,8 +25,7 @@ export function Navbar() {
 
   const scrollTo = (href: string) => {
     setMenuOpen(false)
-    const el = document.querySelector(href)
-    el?.scrollIntoView({ behavior: 'smooth' })
+    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' })
   }
 
   return (
@@ -35,20 +35,20 @@ export function Navbar() {
         animate={{ backgroundColor: scrolled ? 'rgba(250,250,247,0.95)' : 'transparent' }}
         style={{ backdropFilter: scrolled ? 'blur(12px)' : 'none', boxShadow: scrolled ? '0 1px 20px rgba(0,0,0,0.08)' : 'none' }}
       >
-        <div className="max-w-7xl mx-auto px-6 h-16 md:h-20 flex items-center justify-between">
+        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 h-14 sm:h-16 md:h-20 flex items-center justify-between">
           {/* Logo */}
           <motion.button
             onClick={() => scrollTo('#hero')}
-            className="font-display text-lg md:text-xl font-bold leading-tight text-left"
+            className="font-display text-base sm:text-lg md:text-xl font-bold leading-tight text-left"
             style={{ color: scrolled ? '#1A3D2B' : '#fff' }}
             whileHover={{ scale: 1.01 }}
           >
-            Sri Kalleshwara<br className="hidden md:block" />
+            Sri Kalleshwara<span className="hidden sm:inline"><br /></span>
             <span className="text-[#7FB069]"> Enterprises</span>
           </motion.button>
 
           {/* Desktop links */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-6 xl:gap-8">
             {NAV_LINKS.map(link => (
               <button
                 key={link.href}
@@ -62,23 +62,23 @@ export function Navbar() {
             <WhatsAppButton url={WA.hero} label="Enquire Now" size="sm" />
           </div>
 
-          {/* Mobile hamburger */}
+          {/* Mobile/tablet hamburger */}
           <button
-            className="md:hidden p-2"
+            className="lg:hidden p-2"
             onClick={() => setMenuOpen(v => !v)}
             style={{ color: scrolled ? '#1A3D2B' : '#fff' }}
             aria-label="Toggle menu"
           >
-            {menuOpen ? <X size={24} /> : <Menu size={24} />}
+            {menuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </motion.nav>
 
-      {/* Mobile drawer */}
+      {/* Mobile / tablet drawer */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            className="fixed inset-0 z-40 bg-[#1A3D2B] flex flex-col items-center justify-center gap-8 md:hidden"
+            className="fixed inset-0 z-40 bg-[#1A3D2B] flex flex-col items-center justify-center gap-6 sm:gap-8 lg:hidden"
             initial={{ x: '100%' }}
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
@@ -88,7 +88,7 @@ export function Navbar() {
               <motion.button
                 key={link.href}
                 onClick={() => scrollTo(link.href)}
-                className="font-display text-4xl font-bold text-white hover:text-[#7FB069] transition-colors"
+                className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white hover:text-[#7FB069] transition-colors"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.06 }}
